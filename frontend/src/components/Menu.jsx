@@ -1,11 +1,11 @@
-import React from 'react'
+import { Link } from 'react-router-dom'
 import imgLogo from '../assets/itecnis_logo.png'
 
 export const Menu = () => {
   return (
     <nav>
       <ul>
-        <li><a href='/'><img src={imgLogo} alt='itecnis logo' /></a></li>
+        <li><Link to='/'><img src={imgLogo} alt='itecnis logo' /></Link></li>
       </ul>
     </nav>
   )
