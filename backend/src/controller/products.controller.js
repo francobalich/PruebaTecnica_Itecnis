@@ -1,5 +1,6 @@
 import { response } from "express"
 import { getAllProducts, saveProducts } from "./database.controller.js"
+import { isObjectEmpty } from "../utils/isObjectEmpty.js"
 
 export const getProducts = async (req, res = response) => {
   try {
@@ -17,18 +18,18 @@ export const getProducts = async (req, res = response) => {
 
 export const postProduct = async (req, res = response) => {
   try {
-    const product = {
-      id: 11,
-      titulo: "Router TP-Link Archer AX50",
-      precio: 149.99,
-      categoria: "Redes",
-      imagen: "https://static.tp-link.com/Archer-AX50_01_normal_1616726600988r.jpg",
-      descripcion: "Router WiFi 6 con velocidad de hasta 3 Gbps, cobertura amplia y múltiples funciones de seguridad."
+    const product = req.body;
+    console.log(product);
+    if (!isObjectEmpty(product)) {
+      const resp = await saveProducts(product)
+      return res.status(200).json({
+        status: "Ok",
+        data: resp
+      })
     }
-    const resp = await saveProducts(product)
-    return res.status(200).json({
-      status: "Ok",
-      data: resp
+    return res.status(404).json({
+      status: "Error",
+      message: "Data not sent"
     })
   }
   catch (err) {

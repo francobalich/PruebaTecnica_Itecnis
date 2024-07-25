@@ -1,6 +1,7 @@
 import { Router } from 'express'
-import { getProducts } from '../controller/products.controller.js'
+import { getProducts, postProduct } from '../controller/products.controller.js'
 
 export const productsRouter = Router()
 
 productsRouter.get('/getProducts',getProducts)
+productsRouter.post('/postProducts',postProduct)
