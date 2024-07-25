@@ -4,9 +4,24 @@ import './Catalog.css'
 import { ProductsContext } from '../context/ProductsContext'
 
 export const Catalog = () => {
-  const { products } = useContext(ProductsContext)
+  const { products,setProducts } = useContext(ProductsContext)
   const [cards, setCards] = useState(<></>)
+
+  const getProducts= async()=>{
+    const resp = await fetch(`http://localhost:4000/api/getProducts`)
+    const {data} = await resp.json()
+    return data;
+  }
+  useEffect(()=>{
+    if(products.length===0){
+      console.log("Cargando context");
+      getProducts().then((resp)=>{
+        setProducts(resp)
+      })
+    }
+  },[])
   useEffect(() => {
+    console.log(products);
     setCards(() => {
       return products.map(element => {
         return <Card
@@ -18,7 +33,7 @@ export const Catalog = () => {
         />
       });
     })
-  }, [])
+  }, [products])
 
   return (
     <section className='catalog'>
