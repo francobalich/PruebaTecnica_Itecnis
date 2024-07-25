@@ -1,0 +1,58 @@
+[
+  {
+    "titulo": "Laptop Dell XPS 13",
+    "precio": 999.99,
+    "categoria": "Laptops",
+    "imagen": "https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/xps-notebooks/xps-13-9315/media-gallery/notebook-xps-9315-nt-blue-gallery-3.psd?fmt=png-alpha&pscan=auto&scl=1&hei=402&wid=575&qlt=100,1&resMode=sharp2&size=575,402&chrss=full",
+    "descripcion": "Laptop ultrafina con pantalla de 13 pulgadas, procesador Intel i7 de décima generación y 16GB de RAM."
+  },
+  {
+    "titulo": "Mouse Logitech MX Master 3",
+    "precio": 99.99,
+    "categoria": "Accesorios",
+    "imagen": "https://resource.logitech.com/w_1600,c_limit,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/mx-master-3s/gallery/mx-master-3s-mouse-top-view-black.png?v=1",
+    "descripcion": "Mouse inalámbrico avanzado con control preciso, botones personalizables y batería recargable de larga duración."
+  },
+  {
+    "titulo": "Monitor Samsung 27\" Curvo",
+    "precio": 279.99,
+    "categoria": "Monitores",
+    "imagen": "https://m.media-amazon.com/images/I/41kpXwLy5VL.__AC_SX300_SY300_QL70_FMwebp_.jpg",
+    "descripcion": "Monitor curvo de 27 pulgadas con resolución 4K, tecnología FreeSync y múltiples puertos de conectividad."
+  },
+  {
+    "titulo": "Teclado Mecánico Corsair K95",
+    "precio": 199.99,
+    "categoria": "Accesorios",
+    "imagen": "https://assets.corsair.com/image/upload/c_pad,q_auto,h_1024,w_1024,f_auto/products/Gaming-Keyboards/CH-9127414-NA/Gallery/K95_PLATINUM_RGB_XT_01.webp?width=1080&quality=85&auto=webp&format=pjpg",
+    "descripcion": "Teclado mecánico RGB con interruptores Cherry MX, iluminación personalizable y teclas programables."
+  },
+  {
+    "titulo": "Disco Duro Externo Seagate 2TB",
+    "precio": 79.99,
+    "categoria": "Almacenamiento",
+    "imagen": "https://m.media-amazon.com/images/G/01/apparel/rcxgs/tile._CB483369110_.gif",
+    "descripcion": "Disco duro externo portátil con capacidad de 2TB, compatible con USB 3.0 y diseño resistente a golpes."
+  },
+  {
+    "titulo": "Tarjeta Gráfica NVIDIA GeForce RTX 3080",
+    "precio": 699.99,
+    "categoria": "Componentes",
+    "imagen": "https://www.nvidia.com/content/dam/en-zz/Solutions/geforce/ampere/rtx-3080-3080ti/geforce-rtx-3080-ti-hero-background-image-spec2-bb770_550-d.jpg",
+    "descripcion": "Tarjeta gráfica de alto rendimiento con 10GB de memoria GDDR6X, soporte para trazado de rayos en tiempo real y refrigeración avanzada."
+  },
+  {
+    "titulo": "Auriculares HyperX Cloud II",
+    "precio": 99.99,
+    "categoria": "Accesorios",
+    "imagen": "https://row.hyperx.com/cdn/shop/files/hyperx_cloud_ii_gunmetal_1_main_900x.jpg?v=1699574292",
+    "descripcion": "Auriculares gaming con sonido envolvente 7.1, micrófono desmontable y cómodas almohadillas de espuma de memoria."
+  },
+  {
+    "titulo": "Router TP-Link Archer AX50",
+    "precio": 149.99,
+    "categoria": "Redes",
+    "imagen": "https://static.tp-link.com/Archer-AX50_01_normal_1616726600988r.jpg",
+    "descripcion": "Router WiFi 6 con velocidad de hasta 3 Gbps, cobertura amplia y múltiples funciones de seguridad."
+  }
+]
