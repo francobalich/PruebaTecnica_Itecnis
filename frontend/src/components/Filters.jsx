@@ -9,7 +9,7 @@ export const Filters = ({ initialItem = 1, lastItem = 12, total = 100 }) => {
         </div>
         <div className='filters__order'>
           <p>Ordenar por: </p>
-          <select id="options" name="options" class="filters__options">
+          <select id="options" name="options" className="filters__options">
             <option value="mayorPrecio">Mayor precio</option>
             <option value="menorPrecio">Menor precio</option>
           </select>
