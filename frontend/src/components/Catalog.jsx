@@ -1,13 +1,14 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { Card } from './Card'
 import './Catalog.css'
-import data from '../data/dataDemo.json'
+import { ProductsContext } from '../context/ProductsContext'
 
 export const Catalog = () => {
+  const { products } = useContext(ProductsContext)
   const [cards, setCards] = useState(<></>)
   useEffect(() => {
     setCards(() => {
-      return data.map(element => {
+      return products.map(element => {
         return <Card
           id={element.id}
           title={element.titulo}

@@ -1,12 +1,15 @@
 import { Link, useParams } from "react-router-dom";
-import data from '../data/dataDemo.json'
 import './Details.css'
 import { DetailsData } from "../components/DetailsData";
 import { NumberSelect } from "../components/NumberSelect";
+import { ProductsContext } from "../context/ProductsContext";
+import { useContext } from "react";
 
 export const Details = () => {
-  const { id } = useParams();
-  const product = data[id]
+  const { products } = useContext(ProductsContext)
+  const { id } = useParams()
+  const product = products[id]
+
   return (
     <>
       <DetailsData category={product.categoria} title={product.titulo} />
