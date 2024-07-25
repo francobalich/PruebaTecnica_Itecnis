@@ -18,7 +18,6 @@ export const getAllProducts = async (req, res = response) => {
 export const getProducts = async (req, res = response) => {
   try {
     const page = parseInt(req.params.page) || 1;
-    console.log(page);
     const resp = await getProductsOfDB(page)
     return res.status(200).json({
       status: "Ok",

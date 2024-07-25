@@ -54,7 +54,6 @@ export async function saveProducts(product) {
   }
 }
 export const getProductsOfDB = async (page=1) => {
-  console.log(page);
   const offset = page*12;
   const connection = await connectToDatabase()
   try {
