@@ -1,7 +1,9 @@
 import dotenv from 'dotenv'
 import express from 'express'
+import cors from 'cors'
 import { categoriesRouter } from './routes/categories.routes.js'
 import { productsRouter } from './routes/products.routes.js'
+import { corsConfig } from './middleware/corsConfig.js'
 dotenv.config()
 
 const PORT = process.env.PORT || 3000
@@ -9,6 +11,10 @@ const PORT = process.env.PORT || 3000
 // Configuración del server
 const app = express()
 app.use(express.json())
+
+// Configuración del cors
+app.use(cors())
+app.use(corsConfig)
 
 // Rutas
 app.use('/api/', categoriesRouter)
