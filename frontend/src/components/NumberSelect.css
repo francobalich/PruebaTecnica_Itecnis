@@ -1,0 +1,32 @@
+.numberselect {
+  display: flex;
+  border: 1px solid black;
+  border-radius: 10px;
+  overflow: hidden;
+  min-width:130px;
+}
+.numberselect input{
+  padding: 20px;
+  border: none;
+  width: 50px;
+}
+
+.numberselect input[type="number"]::-webkit-inner-spin-button,
+.numberselect input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.numberselect input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.numberselect button {
+  background-color: white;
+  border: none;
+  padding: 15px;
+  transition: background-color ease .3s;
+  width: 40px;
+}
+.numberselect button:hover{
+  background-color: #555;
+}
