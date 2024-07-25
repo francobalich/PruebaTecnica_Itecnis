@@ -1,10 +1,11 @@
 import './App.css'
+import { Menu } from './components/Menu'
 
 function App() {
 
   return (
     <>
-     <h1>Esto es el frontend</h1>
+     <Menu />
     </>
   )
 }

@@ -1,0 +1,13 @@
+nav{
+  padding: 30px;
+}
+nav ul{
+  width: 80%;
+}
+nav ul li {
+  list-style: none;
+  text-decoration: none;
+}
+nav ul li a img{
+  height: 40px;
+}
