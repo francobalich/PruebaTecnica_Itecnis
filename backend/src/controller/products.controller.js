@@ -1,4 +1,5 @@
 import { response } from "express"
+import { getAllProducts, saveProducts } from "./database.controller.js"
 
 export const getProducts = async (req, res = response) => {
   try {
