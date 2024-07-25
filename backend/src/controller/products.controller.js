@@ -22,7 +22,7 @@ export const postProducts = async (req, res = response) => {
     console.log(products);
     if (!isObjectEmpty(products)) {
       if (products.length > 0) {
-        products.forEach(async(element) => {
+        products.forEach(async (element) => {
           await saveProducts(element)
         });
         return res.status(200).json({

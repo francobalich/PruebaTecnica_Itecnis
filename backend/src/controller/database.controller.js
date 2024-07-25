@@ -22,9 +22,6 @@ export async function saveProducts(product) {
   const connection = await connectToDatabase()
   try {
     const query = `INSERT INTO  challengeitecnis.products (id,title, category, imageUrl, price, products.description) VALUES ('0','${product.titulo}', '${product.categoria}', '${product.imagen}', '${product.precio}', '${product.descripcion}');`
-    console.log("----");
-    console.log(query);
-    console.log("----");
     const [rows, fields] = await connection.execute(query);
     return rows
   } catch (err) {
