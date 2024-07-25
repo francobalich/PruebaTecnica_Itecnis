@@ -16,15 +16,22 @@ export const getProducts = async (req, res = response) => {
   }
 }
 
-export const postProduct = async (req, res = response) => {
+export const postProducts = async (req, res = response) => {
   try {
-    const product = req.body;
-    console.log(product);
-    if (!isObjectEmpty(product)) {
-      const resp = await saveProducts(product)
-      return res.status(200).json({
-        status: "Ok",
-        data: resp
+    const products = req.body;
+    console.log(products);
+    if (!isObjectEmpty(products)) {
+      if (products.length > 0) {
+        products.forEach(async(element) => {
+          await saveProducts(element)
+        });
+        return res.status(200).json({
+          status: "Ok"
+        })
+      }
+      return res.status(404).json({
+        status: "Error",
+        message: "Array is empty"
       })
     }
     return res.status(404).json({
