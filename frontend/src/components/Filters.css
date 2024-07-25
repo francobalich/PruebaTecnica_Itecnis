@@ -1,0 +1,22 @@
+.filters{
+  background-color: var(--beige);
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.filters__container{
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+  align-items: center;
+}
+.filters__order{
+  display: flex;
+}
+.filters__order p{
+  padding-right: 5px;
+}
+.filters__options{
+  font-family: 'Poppins';
+}
