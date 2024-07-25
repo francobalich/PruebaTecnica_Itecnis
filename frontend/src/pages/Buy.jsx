@@ -1,8 +1,12 @@
 import { useParams } from "react-router-dom";
+import { DetailsData } from "../components/DetailsData";
 
 export const Buy = () => {
   const { id } = useParams();
   return (
-    <div>Buy {id}</div>
+    <>
+      <DetailsData />
+      <div>Buy {id}</div>
+    </>
   )
 }
