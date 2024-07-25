@@ -1,5 +1,5 @@
 # PruebaTecnica_Itecnis
 
-Tiempo total: 6:00 horas
+Tiempo total: 7:15 horas
 
-Error: connect ETIMEDOUT 
+Error: connect ETIMEDOUT
