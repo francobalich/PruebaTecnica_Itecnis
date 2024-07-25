@@ -14,15 +14,16 @@ export const Catalog = () => {
   }, [])
 
   useEffect(() => {
+    console.log(products);
     setCards(() => {
       return products.map(element => {
         return <Card
           key={element.id}
           id={element.id}
-          title={element.titulo}
-          category={element.categoria}
-          price={element.precio}
-          img={element.imagen}
+          title={element.title}
+          category={element.category}
+          price={element.price}
+          img={element.imageUrl}
         />
       });
     })
