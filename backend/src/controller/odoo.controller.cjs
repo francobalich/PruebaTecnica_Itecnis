@@ -4,11 +4,11 @@ require('dotenv').config();
 
 // Configuración de la conexión a la base de datos
 const pool = new Pool({
-  user: process.env.DB_USER,
-  host: process.env.DB_HOST,
-  database: process.env.DB_DATABASE,
-  password: process.env.DB_PWS,
-  port: process.env.DB_PORT,
+  user: process.env.ODOO_USER,
+  host: process.env.ODOO_HOST,
+  database: process.env.ODOO_DATABASE,
+  password: process.env.ODOO_PWS,
+  port: process.env.ODOO_PORT,
 });
 
 const getData = (req, res = response) => {
