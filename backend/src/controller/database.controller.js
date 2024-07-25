@@ -22,7 +22,7 @@ const readOdooData = async()=>{
   return data;
 }
 
-export async function getAllProducts() {
+export async function getAllProductsOfDB() {
   const connection = await connectToDatabase()
   try {
     const [rows, fields] = await connection.execute('SELECT * FROM challengeitecnis.products');
@@ -53,4 +53,23 @@ export async function saveProducts(product) {
     await connection.end();
   }
 }
-
+export const getProductsOfDB = async (page=1) => {
+  console.log(page);
+  const offset = page*12;
+  const connection = await connectToDatabase()
+  try {
+    const [rows, fields] = await connection.execute(`SELECT * FROM challengeitecnis.products LIMIT 12 OFFSET ${offset}`);
+    if(rows.length===0){
+      const resp = await readOdooData()
+      console.log(resp);
+      resp.forEach(async (element) => {
+        await saveProducts(element)
+      })
+    }
+    return rows
+  } catch (err) {
+    console.error('Error de consulta: ' + err.stack);
+  } finally {
+    await connection.end();
+  }
+}

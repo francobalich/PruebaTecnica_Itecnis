@@ -1,10 +1,10 @@
 import { response } from "express"
-import { getAllProducts, saveProducts } from "./database.controller.js"
+import { getAllProductsOfDB, getProductsOfDB, saveProducts } from "./database.controller.js"
 import { isObjectEmpty } from "../utils/isObjectEmpty.js"
 
-export const getProducts = async (req, res = response) => {
+export const getAllProducts = async (req, res = response) => {
   try {
-    const resp = await getAllProducts()
+    const resp = await getAllProductsOfDB()
     return res.status(200).json({
       status: "Ok",
       data: resp
@@ -15,7 +15,21 @@ export const getProducts = async (req, res = response) => {
     res.status(401).send('Some error happened')
   }
 }
-
+export const getProducts = async (req, res = response) => {
+  try {
+    const page = parseInt(req.params.page) || 1;
+    console.log(page);
+    const resp = await getProductsOfDB(page)
+    return res.status(200).json({
+      status: "Ok",
+      data: resp
+    })
+  }
+  catch (err) {
+    console.log(err)
+    res.status(401).send('Some error happened')
+  }
+}
 export const postProducts = async (req, res = response) => {
   try {
     const products = req.body;
