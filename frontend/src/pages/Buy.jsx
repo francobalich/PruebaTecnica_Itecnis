@@ -1,5 +1,8 @@
+import { useParams } from "react-router-dom";
+
 export const Buy = () => {
+  const { id } = useParams();
   return (
-    <div>Buy</div>
+    <div>Buy {id}</div>
   )
 }
