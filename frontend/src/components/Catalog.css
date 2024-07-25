@@ -1,0 +1,14 @@
+.catalog{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px;
+}
+.catalog_container{
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:30px;
+  flex-wrap: wrap;
+}
