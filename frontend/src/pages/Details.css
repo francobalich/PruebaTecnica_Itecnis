@@ -1,0 +1,40 @@
+.details{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.details__container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 0;
+  width: 80%;
+}
+.details__container img{
+  height: 500px;
+}
+.details__data{
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width:40%;
+}
+
+.details__data h5{
+  font-size: 3rem;
+  font-weight: 500;
+}
+.details__price{
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+.details__data .card__category{
+  color: var(--gris);
+}
+.details__actions{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+}
