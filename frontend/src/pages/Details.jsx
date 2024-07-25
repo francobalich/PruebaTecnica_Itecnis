@@ -3,16 +3,24 @@ import './Details.css'
 import { DetailsData } from "../components/DetailsData";
 import { NumberSelect } from "../components/NumberSelect";
 import { ProductsContext } from "../context/ProductsContext";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
+import { useProducts } from "../hooks/useProducts";
 
 export const Details = () => {
-  const { products } = useContext(ProductsContext)
   const { id } = useParams()
-  const product = products[id]
-  useEffect(() => {
-    console.log(products);
+  const [product, setProduct] = useState({})
+  const { products, setProducts } = useContext(ProductsContext)
+  const { loadInContext } = useProducts()
 
+  useEffect(() => {
+    if (products.length===0) {
+      loadInContext();
+    }
   }, [])
+
+  useEffect(()=>{
+    console.log(products);
+  },[products])
 
   return (
     <>
