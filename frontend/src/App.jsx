@@ -1,12 +1,15 @@
 import './App.css'
 import { Menu } from './components/Menu'
 import { Home } from './pages/Home'
+import { BrowserRouter,  } from "react-router-dom"
 
 function App() {
   return (
     <>
-     <Menu />
-     <Home />
+      <Menu />
+      <BrowserRouter>
+        <Home />
+      </BrowserRouter>
     </>
   )
 }
