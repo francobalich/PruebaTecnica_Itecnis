@@ -8,15 +8,16 @@ export const Catalog = () => {
   const { products } = useContext(ProductsContext)
   const [cards, setCards] = useState(<></>)
   const { loadInContext } = useProducts()
-  
-  useEffect(()=>{
+
+  useEffect(() => {
     loadInContext()
-  },[])
+  }, [])
 
   useEffect(() => {
     setCards(() => {
       return products.map(element => {
         return <Card
+          key={element.id}
           id={element.id}
           title={element.titulo}
           category={element.categoria}
