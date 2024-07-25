@@ -18,7 +18,7 @@ const queryProductTemplatesWithCategoryNames = async () => {
   console.log("Conectado");
   try {
     const queryText = `
-      SELECT pt.name AS title,pt.list_price, pc.name AS category_name, pt.description FROM product_template pt
+      SELECT pt.name AS title,pt.list_price AS price, pc.name AS category, pt.description FROM product_template pt
       LEFT JOIN product_category pc ON pt.categ_id = pc.id
       WHERE pt.categ_id IS NOT null and pt.list_price is not null
       LIMIT 100;`;
