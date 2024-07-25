@@ -22,7 +22,9 @@
 .card__data .card__category{
   color: var(--gris);
 }
-.card__data button{
+.btnBuy{
+  text-align: center;
+  text-decoration: none;
   width: 100%;
   padding: 12px;
   color: var(--oro);
@@ -32,6 +34,6 @@
   border-radius: 3px;
   transition: background-color ease .3s;
 }
-.card__data button:hover{
+.btnBuy:hover{
   background-color: #555;
 }

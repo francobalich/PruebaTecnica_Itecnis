@@ -9,6 +9,7 @@ export const Catalog = () => {
     setCards(() => {
       return data.map(element => {
         return <Card
+          id={element.id}
           title={element.titulo}
           category={element.categoria}
           price={element.precio}
