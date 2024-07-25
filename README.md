@@ -1,3 +1,3 @@
 # PruebaTecnica_Itecnis
 
-Tiempo total: 3:20 horas
+Tiempo total: 4:06 horas

@@ -9,7 +9,7 @@ export const Details = () => {
   const product = data[id]
   return (
     <>
-      <DetailsData />
+      <DetailsData category={product.categoria} title={product.titulo} />
       <section className="details">
         <div className="details__container">
           <img src={product.imagen} alt='producto' />
