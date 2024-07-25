@@ -29,9 +29,9 @@ export async function getAllProducts() {
     if(rows.length===0){
       const resp = await readOdooData()
       console.log(resp);
-      /*resp.forEach(async (element) => {
+      resp.forEach(async (element) => {
         await saveProducts(element)
-      })*/
+      })
     }
     return rows
   } catch (err) {
