@@ -9,7 +9,7 @@ import { useProducts } from "../hooks/useProducts";
 export const Details = () => {
   const { id } = useParams()
   const [product, setProduct] = useState({})
-  const { products, setProducts } = useContext(ProductsContext)
+  const { products } = useContext(ProductsContext)
   const { loadInContext } = useProducts()
 
   useEffect(() => {
@@ -19,20 +19,21 @@ export const Details = () => {
   }, [])
 
   useEffect(()=>{
-    console.log(products);
+    const newProduct = products.find(item => item.id == id) ||{}
+    setProduct(newProduct)
   },[products])
 
   return (
     <>
-      <DetailsData category={product.categoria} title={product.titulo} />
+      <DetailsData category={product.category} title={product.title} />
       <section className="details">
         <div className="details__container">
-          <img src={product.imagen} alt='producto' />
+          <img src={product.imageUrl} alt='producto' />
           <div className='details__data'>
-            <h5>{product.titulo}</h5>
-            <p className='card__category' >{product.categoria}</p>
-            <p>{product.descripcion}</p>
-            <p className="details__price">${product.precio}</p>
+            <h5>{product.title}</h5>
+            <p className='card__category' >{product.category}</p>
+            <p>{product.description}</p>
+            <p className="details__price">${product.price}</p>
             <div className="details__actions">
               <NumberSelect initialValue={1} />
               <Link className='btnBuy' to={`/buy/${id}`}>Comprar</Link>

@@ -14,7 +14,6 @@ export const Catalog = () => {
   }, [])
 
   useEffect(() => {
-    console.log(products);
     setCards(() => {
       return products.map(element => {
         return <Card
