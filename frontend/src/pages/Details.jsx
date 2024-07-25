@@ -3,12 +3,16 @@ import './Details.css'
 import { DetailsData } from "../components/DetailsData";
 import { NumberSelect } from "../components/NumberSelect";
 import { ProductsContext } from "../context/ProductsContext";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 export const Details = () => {
   const { products } = useContext(ProductsContext)
   const { id } = useParams()
   const product = products[id]
+  useEffect(() => {
+    console.log(products);
+
+  }, [])
 
   return (
     <>

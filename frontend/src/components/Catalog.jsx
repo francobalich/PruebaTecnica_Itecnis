@@ -2,26 +2,18 @@ import { useContext, useEffect, useState } from 'react'
 import { Card } from './Card'
 import './Catalog.css'
 import { ProductsContext } from '../context/ProductsContext'
+import { useProducts } from '../hooks/useProducts'
 
 export const Catalog = () => {
-  const { products,setProducts } = useContext(ProductsContext)
+  const { products } = useContext(ProductsContext)
   const [cards, setCards] = useState(<></>)
-
-  const getProducts= async()=>{
-    const resp = await fetch(`http://localhost:4000/api/getProducts`)
-    const {data} = await resp.json()
-    return data;
-  }
+  const { loadInContext } = useProducts()
+  
   useEffect(()=>{
-    if(products.length===0){
-      console.log("Cargando context");
-      getProducts().then((resp)=>{
-        setProducts(resp)
-      })
-    }
+    loadInContext()
   },[])
+
   useEffect(() => {
-    console.log(products);
     setCards(() => {
       return products.map(element => {
         return <Card
