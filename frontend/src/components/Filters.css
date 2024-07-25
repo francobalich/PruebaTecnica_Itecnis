@@ -20,3 +20,8 @@
 .filters__options{
   font-family: 'Poppins';
 }
+.btnReturn{
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
