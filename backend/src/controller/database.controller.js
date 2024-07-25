@@ -44,7 +44,7 @@ export async function getAllProducts() {
 export async function saveProducts(product) {
   const connection = await connectToDatabase()
   try {
-    const query = `INSERT INTO  challengeitecnis.products (id,title, category, imageUrl, price, products.description) VALUES ('0','${product.title}', '${product.category}', '${product.image}', '${product.price}', '${product.description}');`
+    const query = `INSERT INTO  challengeitecnis.products (id,title, category, imageUrl, price, products.description) VALUES ('0','${product.title}', '${product.category}', '${product.imageUrl}', '${product.price}', '${product.description}');`
     const [rows, fields] = await connection.execute(query);
     return rows
   } catch (err) {
