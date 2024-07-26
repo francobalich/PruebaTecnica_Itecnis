@@ -18,14 +18,29 @@ export const useProducts = () => {
         setProducts(resp)
       })
   }
-  const buyProducts = async (page=1) => {
-    console.log(page);
-    const resp = await fetch(`http://localhost:4000/api/getProducts/${page}`)
-    const { data } = await resp.json()
-    return data;
-  }
+  const buyProduct = async (productId) => {
+    try {
+        const response = await fetch('http://localhost:4000/api/buyProducts', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ id: productId }),
+        });
+
+        if (!response.ok) {
+            throw new Error('Error en la compra del producto');
+        }
+
+        const result = await response.json();
+        return `Compra realizada: ${result.message}`
+    } catch (err) {
+        console.error('Error al comprar producto: ' + err.message);
+    }
+};
   return {
     getProducts,
-    loadInContext
+    loadInContext,
+    buyProduct
   }
 }
