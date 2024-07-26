@@ -4,6 +4,7 @@ import { ProductsContext } from "../context/ProductsContext";
 import { useContext, useEffect, useState } from "react";
 import { useProducts } from "../hooks/useProducts";
 import { TotalCard } from "../components/TotalCard";
+import { ShoppingCart } from "../components/ShoppingCart";
 
 export const Buy = () => {
   const { id } = useParams();
@@ -25,9 +26,7 @@ export const Buy = () => {
     <>
       <DetailsData category={product.categoria} title={product.titulo} />
       <section>
-        <div>
-
-        </div>
+        <ShoppingCart />
         <TotalCard />
       </section>
     </>
