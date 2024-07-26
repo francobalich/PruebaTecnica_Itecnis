@@ -6,13 +6,13 @@ import { useProducts } from '../hooks/useProducts'
 import { Pages } from './Pages'
 
 export const Catalog = () => {
-  const { products } = useContext(ProductsContext)
+  const { products,page} = useContext(ProductsContext)
   const [cards, setCards] = useState(<></>)
   const { loadInContext } = useProducts()
 
   useEffect(() => {
-    loadInContext()
-  }, [])
+    loadInContext(parseInt(page))
+  }, [page])
 
   useEffect(() => {
     setCards(() => {
