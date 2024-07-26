@@ -1,6 +1,6 @@
 .buy__container{
   display: flex;
   justify-content: center;
-  padding: 80px;
+  padding: 40px;
   gap: 30px;
 }

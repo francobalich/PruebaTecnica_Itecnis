@@ -6,6 +6,7 @@ import { useProducts } from "../hooks/useProducts";
 import { TotalCard } from "../components/TotalCard";
 import { ShoppingCart } from "../components/ShoppingCart";
 import './Buy.css'
+import { Banner } from "../components/Banner";
 
 export const Buy = () => {
   const { id } = useParams();
@@ -20,12 +21,13 @@ export const Buy = () => {
   }, [])
 
   useEffect(() => {
-    const newProduct = products.find(item => item.id == id) ||{}
+    const newProduct = products.find(item => item.id == id) || {}
     setProduct(newProduct)
   }, [products])
 
   return (
     <>
+      <Banner text="Compra"/>
       <DetailsData category={product.category} title={product.title} />
       <section className="buy__container">
         <ShoppingCart product={product} />
