@@ -26,7 +26,7 @@ export const Buy = () => {
 
   return (
     <>
-      <DetailsData category={product.categoria} title={product.titulo} />
+      <DetailsData category={product.category} title={product.title} />
       <section className="buy__container">
         <ShoppingCart product={product} />
         <TotalCard />
