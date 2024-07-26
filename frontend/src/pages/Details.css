@@ -38,3 +38,23 @@
   align-items: center;
   gap: 18px;
 }
+@media screen and (max-width:800px) {
+  .details__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 0;
+    width: 80%;
+  }
+  .details__data{
+    width: 100%;
+  }
+  .details__container img{
+    height: 200px;
+  }
+  .details__actions{
+    flex-direction: column;
+    align-items: start;
+  }
+}

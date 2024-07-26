@@ -4,3 +4,8 @@
   padding: 40px;
   gap: 30px;
 }
+@media screen and (max-width:800px) {
+  .buy__container{
+    flex-direction: column;
+  }
+}
