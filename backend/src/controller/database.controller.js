@@ -72,3 +72,24 @@ export const getProductsOfDB = async (page=1) => {
     await connection.end();
   }
 }
+
+export const buyProductOfDB = async (productId) => {
+  const connection = await connectToDatabase();
+  try {
+      const [rows] = await connection.execute(`SELECT stock FROM challengeitecnis.products WHERE id = ?`, [productId]);
+      if (rows.length === 0) {
+          return 'Producto no encontrado';
+      }
+      const product = rows[0];
+      if (product.stock > 0) {
+          await connection.execute(`UPDATE challengeitecnis.products SET stock = stock - 1 WHERE id = ?`, [productId]);
+          return `Compraste el producto con ID ${productId}. Stock restante: ${product.stock - 1}`
+      } else {
+          return'Producto sin stock.';
+      }
+  } catch (err) {
+      console.error('Error al comprar producto: ' + err.stack);
+  } finally {
+      await connection.end();
+  }
+};
