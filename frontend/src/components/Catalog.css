@@ -1,13 +1,20 @@
-.catalog{
+.catalog__page {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 60px;
+  gap: 60px;
 }
-.catalog_container{
+.catalog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.catalog_container {
   width: 80%;
   display: flex;
   justify-content: center;
-  gap:30px;
+  gap: 30px;
   flex-wrap: wrap;
 }

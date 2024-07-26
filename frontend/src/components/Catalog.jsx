@@ -3,6 +3,7 @@ import { Card } from './Card'
 import './Catalog.css'
 import { ProductsContext } from '../context/ProductsContext'
 import { useProducts } from '../hooks/useProducts'
+import { Pages } from './Pages'
 
 export const Catalog = () => {
   const { products } = useContext(ProductsContext)
@@ -29,10 +30,14 @@ export const Catalog = () => {
   }, [products])
 
   return (
-    <section className='catalog'>
-      <div className='catalog_container'>
-        {cards}
-      </div>
-    </section>
+    <div className='catalog__page'>
+      <section className='catalog'>
+        <div className='catalog_container'>
+          {cards}
+        </div>
+      </section>
+      <Pages />
+    </div>
+
   )
 }

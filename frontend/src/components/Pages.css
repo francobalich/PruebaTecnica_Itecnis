@@ -1,0 +1,25 @@
+.pages__container{
+  display: flex;
+  gap: 30px;
+}
+.pages__container a {
+  min-width: 60px;
+  height: 60px;
+  padding: 15px;
+  background-color: var(--beige);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  text-decoration: none;
+  list-style: none;
+  color: black;
+}
+.pages__container a li{
+  text-decoration: none;
+}
+.pages__container a:hover{
+  background-color: var(--oro) !important;
+  font-weight: bold;
+  color: white !important;
+}
