@@ -16,8 +16,8 @@ export const Card = ({
         <h5>{title}</h5>
         <p className='card__category' >{category}</p>
         <p>${price}</p>
-        <Link className='btnBuy' to={`/details/${id}`}>Comprar</Link>
       </div>
+      <Link className='btnBuy' to={`/details/${id}`}>Comprar</Link>
     </div>
   )
 }

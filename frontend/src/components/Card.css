@@ -4,11 +4,11 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  min-width: 300px;
 }
 .card img {
   height: 300px;
   object-fit: cover;
-
 }
 .card__data {
   padding: 16px;
@@ -25,7 +25,6 @@
 .btnBuy{
   text-align: center;
   text-decoration: none;
-  width: 100%;
   padding: 12px;
   color: var(--oro);
   font-weight: bold;
@@ -33,6 +32,8 @@
   border: 1px solid rgb(102, 102, 102);
   border-radius: 3px;
   transition: background-color ease .3s;
+  margin:0px 25px 25px 25px;
+  margin-top: auto;
 }
 .btnBuy:hover{
   background-color: #555;
