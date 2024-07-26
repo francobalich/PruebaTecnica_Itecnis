@@ -1,7 +1,12 @@
 import { Link } from 'react-router-dom'
 import './TotalCard.css'
+import { useEffect } from 'react'
 
-export const TotalCard = () => {
+export const TotalCard = ({product }) => {
+  useEffect(() => {
+    console.log(product);
+  }, [])
+  
   return (
     <section className="totalCard__container">
       <h2>Total</h2>

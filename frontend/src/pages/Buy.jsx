@@ -31,7 +31,7 @@ export const Buy = () => {
       <DetailsData category={product.category} title={product.title} />
       <section className="buy__container">
         <ShoppingCart product={product} />
-        <TotalCard />
+        <TotalCard product={product } />
       </section>
     </>
   )

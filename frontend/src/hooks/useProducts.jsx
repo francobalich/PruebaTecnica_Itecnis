@@ -18,6 +18,12 @@ export const useProducts = () => {
         setProducts(resp)
       })
   }
+  const buyProducts = async (page=1) => {
+    console.log(page);
+    const resp = await fetch(`http://localhost:4000/api/getProducts/${page}`)
+    const { data } = await resp.json()
+    return data;
+  }
   return {
     getProducts,
     loadInContext
