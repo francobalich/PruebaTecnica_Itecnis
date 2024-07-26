@@ -15,7 +15,8 @@ const readOdooData = async()=>{
     data.push(
       {
       ...element,
-      imageUrl:"https://random.imagecdn.app/500/500"
+      imageUrl:"https://random.imagecdn.app/500/500",
+      stock:100
     }
     )
   });
