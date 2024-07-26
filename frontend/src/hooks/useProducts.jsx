@@ -33,7 +33,7 @@ export const useProducts = () => {
         }
 
         const result = await response.json();
-        return `Compra realizada: ${result.message}`
+        return result.message
     } catch (err) {
         console.error('Error al comprar producto: ' + err.message);
     }
