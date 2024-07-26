@@ -4,15 +4,30 @@
   grid-template-rows: 1fr 1fr;
   gap: 10px;
   width: 100%;
-  height: 100vh;
-  padding: 20px;
   box-sizing: border-box;
 }
 .grid-item {
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
+  height: 40px;
+}
+.totalCard__container{
+  padding: 25px 75px;
+  width: 20%;
+  background-color: var(--beige);
   display: flex;
-  align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+}
+.totalCard__container h2{
+  font-size: 32px;
+}
+.subtotal{
+  color: var(--gris);
+  text-align: end;
+}
+.total{
+  color: var(--oro);
+  font-size: 20px;
+  text-align: end;
 }

@@ -2,7 +2,7 @@ import "./ShoppingCart.css"
 
 export const ShoppingCart = () => {
   return (
-    <>
+    <section className="shoppingcart__container">
       <table border="1">
         <thead>
           <tr>
@@ -30,6 +30,6 @@ export const ShoppingCart = () => {
           </tr>
         </tbody>
       </table>
-    </>
+    </section>
   )
 }

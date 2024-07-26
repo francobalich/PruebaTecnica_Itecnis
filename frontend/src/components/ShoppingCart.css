@@ -1,0 +1,7 @@
+.shoppingcart__container{
+  width: 60%;
+  background-color:aqua;
+}
+.shoppingcart__container table{
+  width: 100%;
+}

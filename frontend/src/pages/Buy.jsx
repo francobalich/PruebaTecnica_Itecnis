@@ -5,6 +5,7 @@ import { useContext, useEffect, useState } from "react";
 import { useProducts } from "../hooks/useProducts";
 import { TotalCard } from "../components/TotalCard";
 import { ShoppingCart } from "../components/ShoppingCart";
+import './Buy.css'
 
 export const Buy = () => {
   const { id } = useParams();
@@ -25,7 +26,7 @@ export const Buy = () => {
   return (
     <>
       <DetailsData category={product.categoria} title={product.titulo} />
-      <section>
+      <section className="buy__container">
         <ShoppingCart />
         <TotalCard />
       </section>
