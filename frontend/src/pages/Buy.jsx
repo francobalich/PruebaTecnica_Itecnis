@@ -20,14 +20,15 @@ export const Buy = () => {
   }, [])
 
   useEffect(() => {
-    console.log(products);
+    const newProduct = products.find(item => item.id == id) ||{}
+    setProduct(newProduct)
   }, [products])
 
   return (
     <>
       <DetailsData category={product.categoria} title={product.titulo} />
       <section className="buy__container">
-        <ShoppingCart />
+        <ShoppingCart product={product} />
         <TotalCard />
       </section>
     </>

@@ -1,32 +1,32 @@
 import "./ShoppingCart.css"
+import svgDelete from '../assets/delete.svg'
 
-export const ShoppingCart = () => {
+export const ShoppingCart = ({ product }) => {
+  console.log(product);
   return (
     <section className="shoppingcart__container">
-      <table border="1">
+      <table cellspacing="0">
         <thead>
           <tr>
             <th>Producto</th>
             <th>Precio</th>
             <th>Cantidad</th>
             <th>Total</th>
-            <th>Eliminar</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Producto 1</td>
-            <td>$10.00</td>
+            <td>
+              <div className="table__productContainer">
+                <img className="imgProduct" src={product.imageUrl} alt={product.title} />
+                <p>{product.title}</p>
+              </div>
+            </td>
+            <td>${product.price}</td>
             <td>2</td>
-            <td>$20.00</td>
-            <td><button>X</button></td>
-          </tr>
-          <tr>
-            <td>Producto 2</td>
-            <td>$15.00</td>
-            <td>1</td>
-            <td>$15.00</td>
-            <td><button>X</button></td>
+            <td>${product.price}</td>
+            <td className="btnDelete"><img src={svgDelete} alt="boton de eliminar" /></td>
           </tr>
         </tbody>
       </table>

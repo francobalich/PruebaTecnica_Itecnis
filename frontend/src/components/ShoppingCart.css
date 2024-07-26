@@ -1,7 +1,33 @@
 .shoppingcart__container{
   width: 60%;
-  background-color:aqua;
 }
 .shoppingcart__container table{
   width: 100%;
+  border: none;
+}
+.shoppingcart__container thead{
+   background-color: var(--beige);
+   border: none;
+}
+.shoppingcart__container th{
+  border: 1px solid var(--beige)
+}
+.shoppingcart__container td{
+  border: none;
+  text-align: center;
+  padding-top: 15px;
+}
+.btnDelete{
+  border: none;
+  background-color: transparent;
+}
+.imgProduct{
+  width: 80px;
+  border-radius: 15px;
+}
+.table__productContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
