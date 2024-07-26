@@ -21,6 +21,7 @@ export const Details = () => {
   useEffect(()=>{
     const newProduct = products.find(item => item.id == id) ||{}
     setProduct(newProduct)
+    console.log(newProduct);
   },[products])
 
   return (
@@ -34,6 +35,7 @@ export const Details = () => {
             <p className='card__category' >{product.category}</p>
             <p>{product.description}</p>
             <p className="details__price">${product.price}</p>
+            <p className='card__category' >Stock: {product.stock}</p>
             <div className="details__actions">
               <NumberSelect initialValue={1} />
               <Link className='btnBuy' to={`/buy/${id}`}>Comprar</Link>
