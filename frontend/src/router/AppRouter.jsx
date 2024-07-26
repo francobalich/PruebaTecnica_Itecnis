@@ -6,10 +6,10 @@ export const AppRouter = () => {
   return (
     <ProductsProvider>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/:page" element={<Home />} />
         <Route path="/buy/:id" element={<Buy />} />
         <Route path="/details/:id" element={<Details />} />
-        <Route path="/*" element={<Navigate to='/' />} />
+        <Route path="/*" element={<Navigate to='/1' />} />
       </Routes>
     </ProductsProvider>
 
