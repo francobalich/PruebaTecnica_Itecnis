@@ -3,6 +3,7 @@ import { DetailsData } from "../components/DetailsData";
 import { ProductsContext } from "../context/ProductsContext";
 import { useContext, useEffect, useState } from "react";
 import { useProducts } from "../hooks/useProducts";
+import { TotalCard } from "../components/TotalCard";
 
 export const Buy = () => {
   const { id } = useParams();
@@ -23,7 +24,12 @@ export const Buy = () => {
   return (
     <>
       <DetailsData category={product.categoria} title={product.titulo} />
-      <div>Buy {id}</div>
+      <section>
+        <div>
+
+        </div>
+        <TotalCard />
+      </section>
     </>
   )
 }
