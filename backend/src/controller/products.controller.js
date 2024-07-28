@@ -75,9 +75,9 @@ export const postProducts = async (req, res = response) => {
 export const buyProduct = async (req, res = response) => {
   try {
     const {id,amount=1} = req.body
-    console.log(`Producto a comprar - ${id}`);
+    console.log(`(${id})Producto a comprar x ${amount}`);
     if (id !== undefined) {
-      let resp=await buyProductOfDB(id)
+      let resp=await buyProductOfDB(id,amount)
       return res.status(200).json({
         status: "Ok",
         message:resp
