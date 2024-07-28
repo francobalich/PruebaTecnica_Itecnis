@@ -11,6 +11,7 @@ export const Details = () => {
   const [product, setProduct] = useState({})
   const { products } = useContext(ProductsContext)
   const { loadInContext } = useProducts()
+  const [amount, setAmount] = useState(1)
 
   useEffect(() => {
     if (products.length===0) {
@@ -37,8 +38,8 @@ export const Details = () => {
             <p className="details__price">${product.price}</p>
             <p className='card__category' >Stock: {product.stock}</p>
             <div className="details__actions">
-              <NumberSelect initialValue={1} />
-              <Link className='btnBuy' to={`/buy/${id}`}>Comprar</Link>
+              <NumberSelect initialValue={1} callValue={setAmount} />
+              <Link className='btnBuy' to={`/buy/${id}/${amount}`}>Comprar</Link>
             </div>
           </div>
         </div>

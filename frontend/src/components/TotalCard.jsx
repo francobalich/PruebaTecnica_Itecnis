@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 import { useProducts } from '../hooks/useProducts'
 import Swal from 'sweetalert2'
 
-export const TotalCard = ({ product }) => {
+export const TotalCard = ({ product,amount=1 }) => {
   const { buyProduct } = useProducts()
   const navigate = useNavigate();
 
@@ -27,9 +27,9 @@ export const TotalCard = ({ product }) => {
       <h2>Total</h2>
       <div className="grid-container">
         <div className="grid-item">Subtotal</div>
-        <div className="grid-item subtotal">$50000</div>
+        <div className="grid-item subtotal">${product.price}</div>
         <div className="grid-item">Total</div>
-        <div className="grid-item total">$50000</div>
+        <div className="grid-item total">${product.price*amount}</div>
       </div>
       <button className='btnBuy' onClick={handleBuy}>Comprar</button>
     </section>

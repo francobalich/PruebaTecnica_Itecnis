@@ -2,7 +2,7 @@ import "./ShoppingCart.css"
 import svgDelete from '../assets/delete.svg'
 import { Link } from "react-router-dom";
 
-export const ShoppingCart = ({ product }) => {
+export const ShoppingCart = ({ product, amount=1}) => {
   console.log(product);
   return (
     <section className="shoppingcart__container">
@@ -25,7 +25,7 @@ export const ShoppingCart = ({ product }) => {
               </div>
             </td>
             <td>${product.price}</td>
-            <td>2</td>
+            <td>{amount}</td>
             <td>${product.price}</td>
             <td className="btnDelete"><Link to='/1'><img src={svgDelete} alt="boton de eliminar" /></Link></td>
           </tr>

@@ -7,7 +7,7 @@ export const AppRouter = () => {
     <ProductsProvider>
       <Routes>
         <Route path="/:page" element={<Home />} />
-        <Route path="/buy/:id" element={<Buy />} />
+        <Route path="/buy/:id/:amount" element={<Buy />} />
         <Route path="/details/:id" element={<Details />} />
         <Route path="/*" element={<Navigate to='/1' />} />
       </Routes>

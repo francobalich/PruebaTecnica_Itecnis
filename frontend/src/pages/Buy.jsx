@@ -9,7 +9,7 @@ import './Buy.css'
 import { Banner } from "../components/Banner";
 
 export const Buy = () => {
-  const { id } = useParams();
+  const { id,amount } = useParams();
   const { products, setProducts } = useContext(ProductsContext)
   const { loadInContext } = useProducts()
   const [product, setProduct] = useState({})
@@ -30,8 +30,8 @@ export const Buy = () => {
       <Banner text="Compra"/>
       <DetailsData category={product.category} title={product.title} />
       <section className="buy__container">
-        <ShoppingCart product={product} />
-        <TotalCard product={product } />
+        <ShoppingCart product={product} amount={amount} />
+        <TotalCard product={product } amount={amount}/>
       </section>
     </>
   )
