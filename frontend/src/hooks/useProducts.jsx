@@ -5,9 +5,11 @@ export const useProducts = () => {
 
   const { products, setProducts } = useContext(ProductsContext)
 
-  const getProducts = async (page = 1) => {
-    const resp = await fetch(`http://localhost:4000/api/getProducts/${page}`)
+  const getProducts = async (page = 1, order = 0) => {
+
+    const resp = await fetch(`http://localhost:4000/api/getProducts/${page}/${order}`)
     const { data } = await resp.json()
+
     return data;
   }
   const getProductsByCategory = async (page = 0, category) => {
@@ -30,9 +32,9 @@ export const useProducts = () => {
     const { data } = await resp.json()
     return data;
   }
-  const loadInContext = (page = 1) => {
+  const loadInContext = (page = 1, order = 0) => {
     console.log("Cargando context");
-    getProducts(page).then((resp) => {
+    getProducts(page, order).then((resp) => {
       setProducts(resp)
     })
   }

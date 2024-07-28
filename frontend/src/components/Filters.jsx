@@ -4,11 +4,15 @@ import { useProducts } from '../hooks/useProducts'
 
 export const Filters = ({ initialItem = 1, lastItem = 12, total = 100, page = 1 }) => {
   const [categories, setCategories] = useState(<></>)
-  const { getCategories, loadInContextByCategory } = useProducts()
+  const { getCategories, loadInContextByCategory,loadInContext } = useProducts()
 
   const handleOptCategories = (ev) => {
     const cat = ev.target.value
     loadInContextByCategory(0, cat)
+  }
+  const handleOptPrice = (ev) => {
+    const order = parseInt(ev.target.value)||0
+    loadInContext(0,order)
   }
 
   const loadCategories = async () => {
@@ -38,8 +42,8 @@ export const Filters = ({ initialItem = 1, lastItem = 12, total = 100, page = 1 
         <div className='filters__order'>
           <p>Ordenar por precio </p>
           <select id="optPrice" name="options" className="filters__options">
-            <option value="mayorPrecio">Mayor precio</option>
-            <option value="menorPrecio">Menor precio</option>
+            <option onClick={handleOptPrice} value="1">Mayor precio</option>
+            <option onClick={handleOptPrice} value="2">Menor precio</option>
           </select>
           <p>Categoria: </p>
           <select id="optCategories" name="options" className="filters__options">
