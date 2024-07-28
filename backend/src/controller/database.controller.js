@@ -95,7 +95,7 @@ export const buyProductOfDB = async (productId,amount=1) => {
     const product = rows[0];
     if (product.stock > 0) {
       await connection.execute(`UPDATE challengeitecnis.products SET stock = stock - ? WHERE id = ?`, [amount,productId]);
-      return `Compraste de "${product.title}".\n Stock restante: ${product.stock - 1}`
+      return `Compraste de "${product.title}".\n Stock restante: ${product.stock - amount}`
     } else {
       return 'Producto sin stock.';
     }
