@@ -10,6 +10,7 @@ export const ShoppingCart = ({ product, amount=1}) => {
         <thead>
           <tr>
             <th>Producto</th>
+            <th>Stock</th>
             <th>Precio</th>
             <th>Cantidad</th>
             <th>Total</th>
@@ -24,6 +25,7 @@ export const ShoppingCart = ({ product, amount=1}) => {
                 <p>{product.title}</p>
               </div>
             </td>
+            <td>{product.stock}</td>
             <td>${product.price}</td>
             <td>{amount}</td>
             <td>${product.price}</td>
