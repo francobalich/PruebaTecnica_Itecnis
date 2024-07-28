@@ -54,21 +54,20 @@ export async function saveProducts(product) {
     await connection.end();
   }
 }
-export const getProductsOfDB = async (page = 1, order) => {
+export const getProductsOfDB = async (page = 0, order) => {
   const offset = page * 12;
   const connection = await connectToDatabase()
   try {
     let query = '';
-    if (order == 0) {
+    if (order === 0) {
       query = `SELECT * FROM challengeitecnis.products  LIMIT 12 OFFSET ${offset}`
     }
-    else if (order == 1) {
+    else if (order === 1) {
       query = `SELECT * FROM challengeitecnis.products ORDER BY price DESC LIMIT 12 OFFSET ${offset}`
     }
     else {
       query = `SELECT * FROM challengeitecnis.products ORDER BY price ASC LIMIT 12 OFFSET ${offset}`
     }
-
 
     const [rows, fields] = await connection.execute(query)
     if (rows.length === 0) {
