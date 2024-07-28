@@ -44,14 +44,14 @@ export const useProducts = () => {
       setProducts(resp)
     })
   }
-  const buyProduct = async (productId) => {
+  const buyProduct = async (productId,amount=1) => {
     try {
       const response = await fetch('http://localhost:4000/api/buyProducts', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ id: productId }),
+        body: JSON.stringify({ id: productId,amount:amount }),
       });
 
       if (!response.ok) {

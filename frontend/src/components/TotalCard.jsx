@@ -11,8 +11,9 @@ export const TotalCard = ({ product,amount=1 }) => {
   useEffect(() => {
     console.log(product);
   }, [])
+
   const handleBuy = async() => {
-    const resp = await buyProduct(product.id)
+    const resp = await buyProduct(product.id,amount)
     console.log(resp);
     Swal.fire({
       title: 'Compra realizada',
