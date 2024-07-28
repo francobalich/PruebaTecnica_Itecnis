@@ -113,3 +113,23 @@ export async function getAllCategoriesOfDB() {
     await connection.end();
   }
 }
+
+export const getProductsByCategoryOfDB = async (page=1,category="") => {
+  const offset = page*12;
+  const connection = await connectToDatabase()
+  try {
+    const [rows, fields] = await connection.execute(`SELECT * FROM challengeitecnis.products where category = '${category}' LIMIT 12 OFFSET ${offset}`);
+    if(rows.length===0){
+      const resp = await readOdooData()
+      console.log(resp);
+      resp.forEach(async (element) => {
+        await saveProducts(element)
+      })
+    }
+    return rows
+  } catch (err) {
+    console.error('Error de consulta: ' + err.stack);
+  } finally {
+    await connection.end();
+  }
+}
