@@ -25,3 +25,14 @@
   color: black;
   font-weight: bold;
 }
+.filters__options{
+  margin-right: 15px;
+  padding:5px 15px ;
+  min-width: 150px;
+  overflow: hidden;
+  border: 1px solid black;
+}
+.filters__options > option{
+ font-family: 'Poppins';
+ padding: 10px;
+}
