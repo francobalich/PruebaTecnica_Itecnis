@@ -4,7 +4,7 @@ import {  buyProduct, getAllProducts, getProducts, getProductsByCategory, postPr
 export const productsRouter = Router()
 
 productsRouter.get('/getAllProducts',getAllProducts)
-productsRouter.get('/getProducts/:page',getProducts)
+productsRouter.get('/getProducts/:page/:order',getProducts)
 productsRouter.post('/getProductsByCategory',getProductsByCategory)
 productsRouter.post('/postProducts',postProducts)
 productsRouter.post('/buyProducts',buyProduct)
