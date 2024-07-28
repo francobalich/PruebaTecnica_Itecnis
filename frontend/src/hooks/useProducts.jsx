@@ -6,12 +6,15 @@ export const useProducts = () => {
   const { products, setProducts } = useContext(ProductsContext)
 
   const getProducts = async (page=1) => {
-    console.log(page);
     const resp = await fetch(`http://localhost:4000/api/getProducts/${page}`)
     const { data } = await resp.json()
     return data;
   }
-
+  const getCategories = async (page=1) => {
+    const resp = await fetch(`http://localhost:4000/api/getCategories`)
+    const { data } = await resp.json()
+    return data;
+  }
   const loadInContext=(page=1)=>{
       console.log("Cargando context");
       getProducts(page).then((resp) => {
@@ -41,6 +44,7 @@ export const useProducts = () => {
   return {
     getProducts,
     loadInContext,
-    buyProduct
+    buyProduct,
+    getCategories
   }
 }
