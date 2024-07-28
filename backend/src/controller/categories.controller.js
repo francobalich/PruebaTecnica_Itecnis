@@ -1,11 +1,12 @@
 import { response } from "express"
+import { getAllCategoriesOfDB } from "./database.controller.js"
 
-export const getCategories =async(req, res = response)=>{
-  try{
-
+export const getCategories = async (req, res = response) => {
+  try {
+    const resp = await getAllCategoriesOfDB()
     return res.status(200).json({
-      status:"Ok",
-      data:''
+      status: "Ok",
+      data: resp
     })
   }
   catch (err) {
