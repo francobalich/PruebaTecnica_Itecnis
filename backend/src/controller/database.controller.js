@@ -54,11 +54,21 @@ export async function saveProducts(product) {
     await connection.end();
   }
 }
-export const getProductsOfDB = async (page = 1) => {
+export const getProductsOfDB = async (page = 1,order) => {
   const offset = page * 12;
   const connection = await connectToDatabase()
   try {
-    const [rows, fields] = await connection.execute(`SELECT * FROM challengeitecnis.products LIMIT 12 OFFSET ${offset}`);
+    let query = '';
+    if (order !== undefined) {
+      query = `SELECT * FROM challengeitecnis.products  LIMIT 12 OFFSET ${offset}`
+    }
+    else {
+      query = `SELECT * FROM challengeitecnis.products ORDER BY price ${(order == 1) ? 'ASC' : 'DESC'
+        } LIMIT 12 OFFSET ${offset}`
+    }
+
+
+    const [rows, fields] = await connection.execute(query)
     if (rows.length === 0) {
       const resp = await readOdooData()
       console.log(resp);
