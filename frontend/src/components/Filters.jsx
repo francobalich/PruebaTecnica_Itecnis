@@ -4,10 +4,11 @@ import { useProducts } from '../hooks/useProducts'
 
 export const Filters = ({ initialItem = 1, lastItem = 12, total = 100, page = 1 }) => {
   const [categories, setCategories] = useState(<></>)
-  const { getCategories } = useProducts()
+  const { getCategories, loadInContextByCategory } = useProducts()
+
   const handleOptCategories = (ev) => {
     const cat = ev.target.value
-    console.log(`Se hizo clic en ${cat}`);
+    loadInContextByCategory(0, cat)
   }
 
   const loadCategories = async () => {
